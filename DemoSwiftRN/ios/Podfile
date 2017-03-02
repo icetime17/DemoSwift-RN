@@ -1,0 +1,53 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'DemoSwiftRN' do
+  # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for DemoSwiftRN
+  pod 'React', :path => '../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'RCTImage',
+    'RCTNetwork',
+    'RCTWebSocket',
+  ]
+
+  target 'DemoSwiftRNTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+# only for React Native ^0.39.[0-2] afaik
+def patch_csslayout(installer)
+  version = `node -p -e "require('../node_modules/react-native/package.json').version"`
+
+  unless version =~ /^0\.39\.[0-2]$/
+    puts ">> Unsure if I should patch for CSSLayout on React Native #{version}. Skipping."
+    return
+  end
+
+  puts ">> Patching for CSSLayout on React Native #{version}"
+
+  # patch header files
+  # https://github.com/facebook/react-native/issues/11272
+  `find ../node_modules/react-native \\( -name *.h -o -name *.m \\) -print0 | xargs -0 sed -i '' -e 's:<CSSLayout/\\(.*\\)>:"\\1":g'`
+
+  # exclude duplicate symbols
+  # https://github.com/facebook/react-native/issues/11502
+  installer.pods_project.targets.each do |target|
+    next unless target.name == 'React'
+
+    source_files = target.source_build_phase.files
+    uniqs = source_files.uniq { |f| f.file_ref.path }
+    (source_files - uniqs).each { |dup| source_files.delete(dup) }
+  end
+end
+
+
+post_install do |installer|
+  patch_csslayout(installer)
+end
