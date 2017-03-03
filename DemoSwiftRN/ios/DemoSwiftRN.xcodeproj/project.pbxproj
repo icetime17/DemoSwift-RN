@@ -13,6 +13,8 @@
 		A4242A161E68188200BAFDC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4242A151E68188200BAFDC0 /* Assets.xcassets */; };
 		A4242A191E68188200BAFDC0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4242A171E68188200BAFDC0 /* LaunchScreen.storyboard */; };
 		A4242A241E68188300BAFDC0 /* DemoSwiftRNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4242A231E68188300BAFDC0 /* DemoSwiftRNTests.swift */; };
+		A4242A2F1E6825CE00BAFDC0 /* RNScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4242A2E1E6825CE00BAFDC0 /* RNScrollView.swift */; };
+		A4242A331E69790F00BAFDC0 /* AdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4242A321E69790F00BAFDC0 /* AdView.swift */; };
 		CE1E8A82797381C6621173F4 /* Pods_DemoSwiftRNTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FEC21077F73F8B5BBB596A2 /* Pods_DemoSwiftRNTests.framework */; };
 		D5102EB5618C3DB311BB1C9F /* Pods_DemoSwiftRN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18967C2F9494041233EAB4C8 /* Pods_DemoSwiftRN.framework */; };
 /* End PBXBuildFile section */
@@ -41,6 +43,8 @@
 		A4242A1F1E68188300BAFDC0 /* DemoSwiftRNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoSwiftRNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4242A231E68188300BAFDC0 /* DemoSwiftRNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSwiftRNTests.swift; sourceTree = "<group>"; };
 		A4242A251E68188300BAFDC0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4242A2E1E6825CE00BAFDC0 /* RNScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RNScrollView.swift; sourceTree = "<group>"; };
+		A4242A321E69790F00BAFDC0 /* AdView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdView.swift; sourceTree = "<group>"; };
 		B981AE87504490FA5F99A522 /* Pods-DemoSwiftRN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSwiftRN.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSwiftRN/Pods-DemoSwiftRN.release.xcconfig"; sourceTree = "<group>"; };
 		CBCCF9FB650E34B6D2D454CD /* Pods-DemoSwiftRNTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSwiftRNTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSwiftRNTests/Pods-DemoSwiftRNTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D88C359EE381152CA830220B /* Pods-DemoSwiftRNTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DemoSwiftRNTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-DemoSwiftRNTests/Pods-DemoSwiftRNTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -111,6 +115,8 @@
 			children = (
 				A4242A0E1E68188200BAFDC0 /* AppDelegate.swift */,
 				A4242A101E68188200BAFDC0 /* ViewController.swift */,
+				A4242A2E1E6825CE00BAFDC0 /* RNScrollView.swift */,
+				A4242A321E69790F00BAFDC0 /* AdView.swift */,
 				A4242A121E68188200BAFDC0 /* Main.storyboard */,
 				A4242A151E68188200BAFDC0 /* Assets.xcassets */,
 				A4242A171E68188200BAFDC0 /* LaunchScreen.storyboard */,
@@ -332,8 +338,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4242A2F1E6825CE00BAFDC0 /* RNScrollView.swift in Sources */,
 				A4242A111E68188200BAFDC0 /* ViewController.swift in Sources */,
 				A4242A0F1E68188200BAFDC0 /* AppDelegate.swift in Sources */,
+				A4242A331E69790F00BAFDC0 /* AdView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +553,7 @@
 				A4242A2A1E68188300BAFDC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A4242A2B1E68188300BAFDC0 /* Build configuration list for PBXNativeTarget "DemoSwiftRNTests" */ = {
 			isa = XCConfigurationList;
@@ -553,6 +562,7 @@
 				A4242A2D1E68188300BAFDC0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

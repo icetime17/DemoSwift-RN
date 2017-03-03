@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  DemoSwiftRN
 //
-//  Created by zj－db0465 on 17/3/2.
+//  Created by Chris Hu on 17/3/2.
 //  Copyright © 2017年 com.icetime17. All rights reserved.
 //
 
@@ -11,10 +11,23 @@ import React
 
 class ViewController: UIViewController {
 
+    lazy var adView: AdView = {
+        let v = AdView(frame: self.view.frame)
+        return v
+    }()
+    
+    lazy var rnScrollView: RNScrollView = {
+        let v = RNScrollView(frame: self.view.frame)
+        return v
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        prepareRNView()
+//        prepareRNView()
+        
+        view.addSubview(adView)
+//        view.addSubview(rnScrollView)
     }
     
     override func didReceiveMemoryWarning() {
